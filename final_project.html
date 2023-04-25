@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Greek Yogurt</title>
+    <style>
+      h1 {
+          text-align: center;
+           color:#7b51e8;
+                   }
+                   h2 {
+                       text-align: center;
+                       border: 1px solid #7b51e8;
+                       line-height:50px ;
+                       padding: 15 px;
+                       font size: 18px;
+                       border-radius:4 px;
+
+
+                   }
+                   img {
+                       display: block;
+                       margin: 0 auto;
+                       max-width: 100%;
+                       padding: 20px;
+                       border-radius: 30px;
+
+                   }
+                   p{
+                     line-height: 1.5;
+                     font-size: 13px;
+                     margin: 0 0 10px;
+                   }
+                   button{
+                     display: block;
+                     margin: 20px auto;
+                     background: #7b51e8;
+                     color: white;
+                     font-size: 24px;
+                     padding: 15px 20px;
+                     border: none;
+                     border-radius: 6px;
+                     box-shadow:5px 5px 10px rgba(0, 0, 0, 0.3) ;
+                     transition: all 200ms ease-in-out ;
+
+                   }
+                   button:hover{
+                    opacity: 0.9;
+                    cursor: pointer;
+                   }
+                   .container{
+                    max-width: 600px;
+                    margin: 0 auto;
+                    padding: 30px 60px;
+                   }
+
+                   .learn-more{
+             display: block;
+       margin-top: 10px;
+       text-decoration: none;
+       color:#7b51e8 ;
+
+                   }
+                   .learn-more:hover{
+                     text-decoration: underline;
+                   }
+                   .footer{
+                    text-align: center;
+                   }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>I love Yogurt</h1>
+      <h2>Especially Greek Yogurt</h2>
+      <img
+        src="https://www.yogurtinnutrition.com/wp-content/uploads/2017/06/do-you-know-what-the-most-nutrient-dense-snack-is.jpg"
+        alt="Greek Yogurt"
+        width="300"
+      />
+      <p>
+        Strained yogurt, Greek yogurt, yogurt cheese, sack yogurt, or kerned
+        yogurt is yogurt that has been strained to remove most of its whey,
+        resulting in a thicker consistency than normal unstrained yogurt, while
+        still preserving the distinctive sour taste of yogurt. Like many types,
+        strained yogurt is often made from milk enriched by boiling off some
+        water content, or by adding extra butterfat and powdered milk. In Europe
+        and North America, it is often made from low-fat or fat-free cow's milk.
+        In Iceland, a similar product named skyr is made.
+        <br />
+      </p>
+      <a
+        href="https://en.wikipedia.org/wiki/Strained_yogurt"
+        target="_blank"
+        class="learn-more"
+        >Learn more on Wikipedia</a
+      >
+      <button class="buy_button">Buy Greek Yogurt</button>
+      <p class="footer">
+        This page was built by
+        <a
+          href="https://www.linkedin.com/in/karina-kvych-036958216/"
+          target="_blank"
+        >
+          Karina Kvych
+        </a>
+      </p>
+    </div>
+    <script>
+      function buy() {
+        let name = prompt("What is your name?");
+        let email = prompt("What is your email address ?");
+        let emojo = prompt("What is your favorite emoji?");
+
+        if (name.length > 0) {
+          alert(
+            "Thank you" +
+              name +
+              "!We will be in touch by email, meanwhile have lot of Yogurt!"
+          );
+        }
+      }
+
+      let buy_button = document.querySelector(".buy_button");
+      buy_button.addEventListener("click", buy);
+    </script>
+  </body>
+</html>

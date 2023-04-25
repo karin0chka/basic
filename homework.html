@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <style>
+      .title {
+        padding: 2px;
+      }
+      .material-symbols-outlined {
+        margin: 0px auto;
+        color: #1a64d6;
+        font-size: 34px;
+      }
+
+      h1 {
+        text-align: center;
+        color: #1a64d6;
+        font-size: 34px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 0px;
+        margin-bottom: 0px;
+      }
+      .title p {
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 34px;
+        margin: 10px 0;
+        color: black;
+      }
+      .temperature {
+        font-weight: bold;
+        text-align: center;
+      }
+      h3 {
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 20px;
+        color: black;
+      }
+      .days h3 span {
+        display: inline-block;
+        color: black;
+        font-size: 20px;
+      }
+      .days p {
+        text-align: center;
+        font-family: monospace;
+        font-size: 18px;
+        color: #6a6863;
+      }
+
+      .days p span {
+        display: inline-block;
+        color: #6a6863;
+        font-size: 18px;
+      }
+      .days {
+        width: 400px;
+        padding: 10px;
+        list-style: none;
+        margin: 0px auto;
+        transition: all 200ms ease-in-out;
+        border-radius: 20px;
+      }
+
+      .days:hover {
+        background-color: #fffbef;
+      }
+      .sun {
+        color: rgb(176, 176, 9) !important;
+      }
+      ul {
+        padding: 0;
+      }
+
+      body {
+        text-align: center;
+      }
+      button {
+        display: block;
+        margin: 0px auto;
+        background: #1a64d6;
+        color: white;
+        border: 1px solid #1a64d6;
+        cursor: pointer;
+        transition: all 200ms ease-in-out;
+        box-shadow: 2px 5px 2px rgb(245, 243, 243);
+        padding: 16px 24px 16px 24px;
+        border-radius: 30px;
+      }
+      button:hover {
+        background-color: white;
+        color: #1a64d6;
+      }
+
+      .name {
+        font-family: monospace;
+        color: #6a6863;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="title">
+      <p>
+        <span class="material-symbols-outlined"> partly_cloudy_day </span>
+      </p>
+      <h1>Currently 21°C in Tokyo</h1>
+      <p>13°&ensp;/&ensp;<span class="temperature">23°</span></p>
+    </section>
+    <ul>
+      <li class="days">
+        <h3>
+          <span class="material-symbols-outlined"> rainy </span>
+          <strong>Tomorrow</strong>
+        </h3>
+        <p>10°&ensp;/&ensp;<span class="temperature">22°</span></p>
+      </li>
+      <li class="days">
+        <h3>
+          <span class="material-symbols-outlined"> cloudy </span>
+          <strong>Saturday</strong>
+        </h3>
+        <p>15°&ensp;/&ensp;<span class="temperature">17°</span></p>
+      </li>
+      <li class="days">
+        <h3>
+          <span class="material-symbols-outlined sun"> wb_sunny </span>
+          <strong>Sunday</strong>
+        </h3>
+        <p>25°&ensp;/&ensp;<span class="temperature">28°</span></p>
+      </li>
+    </ul>
+    <button>Change city</button>
+    <div class="name">
+      <p>Coded by Karina Kvych</p>
+    </div>
+    <script>
+      function updateHeading(titleName, emoji) {
+        let h1 = document.querySelector("h1");
+        let icon = document.querySelector(".title p span");
+        h1.innerHTML = titleName;
+        icon.innerHTML = emoji;
+      }
+      function weather(city) {
+        let temperature = prompt("What temperature is it ? ")
+
+        if (Number(temperature) > 0) {
+          updateHeading(`Currently ${temperature}°C in ${city}`, `😄`);
+
+        } else if (Number(temperature) === 0) {
+
+          updateHeading(`Currently ${temperature}°C in ${city}`, `😑`);
+        } else {
+          
+          updateHeading(`Currently ${temperature}°C in ${city}`, `☹️`);
+        }
+      }
+
+      function getCity() {
+        let city = prompt("What city do you live in ?");
+        weather(city);
+      }
+       
+      let button = document.querySelector("button");
+      button.addEventListener("click", getCity );
+      
+
+
+    </script>
+  </body>
+</html>
